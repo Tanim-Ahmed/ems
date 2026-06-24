@@ -1,0 +1,146 @@
+{% extends "employee_information/base.html" %}
+{% load humanize %}
+
+{% block pageContent %}
+
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+    <div class="mdc-card">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">
+                Employee Training Management Dashboard
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+    <hr class="w-100">
+</div>
+
+<!-- Department -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+    <div class="mdc-card info-card info-card--success">
+        <div class="card-inner">
+            <h5 class="card-title">Departments</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_department|intcomma }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Total Departments
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">business</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Positions -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+    <div class="mdc-card info-card info-card--primary">
+        <div class="card-inner">
+            <h5 class="card-title">Positions</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_position|intcomma }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Total Positions
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">badge</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Employees -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+    <div class="mdc-card info-card info-card--info">
+        <div class="card-inner">
+            <h5 class="card-title">Employees</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_employee|intcomma }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Total Personnel
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">groups</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Total Training Hours -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+    <div class="mdc-card info-card info-card--warning">
+        <div class="card-inner">
+            <h5 class="card-title">Training Hours</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_training_hours|floatformat:1 }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Total Training Hours
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">school</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Completion Hours -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+    <div class="mdc-card info-card info-card--success">
+        <div class="card-inner">
+            <h5 class="card-title">Completed Hours</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_completion_hours|floatformat:1 }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Completed Training Hours
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">task_alt</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Active Employees -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+    <div class="mdc-card info-card info-card--primary">
+        <div class="card-inner">
+            <h5 class="card-title">Active Employees</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ active_employee_count|intcomma }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Currently Active Personnel
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">person</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pending Training -->
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+    <div class="mdc-card info-card info-card--danger">
+        <div class="card-inner">
+            <h5 class="card-title">Pending Training</h5>
+            <h4 class="font-weight-light pb-2 mb-1 border-bottom">
+                {{ total_pending_training|floatformat:1 }}
+            </h4>
+            <p class="tx-12 text-muted">
+                Training Yet To Complete
+            </p>
+            <div class="card-icon-wrapper">
+                <i class="material-icons">pending_actions</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock pageContent %}
